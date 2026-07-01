@@ -1,0 +1,1837 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #f4eadf;
+  color: #12263a;
+}
+.app-shell {
+  min-height: 100vh;
+  padding: 18px 12px;
+  background: radial-gradient(circle at top, #fff7ee, #f1e3d4 55%, #ead7c4);
+}
+.app-container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.page-stack {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+}
+.hero-card,
+.center-card,
+.panel-card,
+.form-card,
+.accepted-card,
+.share-card,
+.arena-card,
+.shop-cta-card,
+.coupon-card {
+  background: #fffaf3;
+  border: 1px solid rgba(154, 72, 35, 0.16);
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 18px 50px rgba(72, 41, 20, 0.08);
+}
+.hero-card,
+.center-card {
+  text-align: center;
+}
+.badge,
+.section-badge {
+  display: inline-flex;
+  margin: 0 auto 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #f7e7d8;
+  color: #963f1f;
+  border: 1px solid rgba(154, 72, 35, 0.25);
+  font-size: 13px;
+  font-weight: 900;
+}
+.hero-card h1,
+.center-card h1 {
+  font-size: clamp(32px, 6vw, 64px);
+  line-height: 1.02;
+  margin: 0 auto 12px;
+  letter-spacing: -0.045em;
+}
+.hero-card p,
+.center-card p,
+.panel-card p,
+.share-card p,
+.shop-cta-card p {
+  color: #526174;
+  line-height: 1.5;
+  margin: 0 auto 16px;
+  max-width: 760px;
+}
+.primary-btn,
+.secondary-btn,
+.recipe-btn {
+  width: 100%;
+  min-height: 54px;
+  border: 0;
+  border-radius: 18px;
+  font-size: 16px;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.primary-btn {
+  background: linear-gradient(135deg, #9a4823, #6f3218);
+  color: #fff;
+  box-shadow: 0 16px 34px rgba(154, 72, 35, 0.24);
+}
+.secondary-btn {
+  background: #f7e7d8;
+  color: #963f1f;
+  border: 1px solid rgba(154, 72, 35, 0.24);
+  margin-bottom: 12px;
+}
+.hero-btn {
+  max-width: 300px;
+  margin: 8px auto 0;
+}
+.steps-grid,
+.mode-grid,
+.theme-grid,
+.recommend-grid {
+  display: grid;
+  gap: 12px;
+}
+.step-card,
+.mode-card,
+.theme-option,
+.recommend-card {
+  background: #fff;
+  border: 1px solid rgba(154, 72, 35, 0.16);
+  border-radius: 20px;
+  padding: 16px;
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+}
+.step-card strong {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  background: #f7e7d8;
+  color: #963f1f;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.step-card span,
+.mode-card span,
+.theme-option span,
+.recommend-card span {
+  display: block;
+  color: #526174;
+  line-height: 1.45;
+  margin-top: 6px;
+}
+.mode-card strong,
+.theme-option strong,
+.recommend-card strong {
+  display: block;
+  color: #12263a;
+  font-size: 17px;
+  font-weight: 900;
+}
+.mode-card.selected,
+.theme-option.selected {
+  background: #f7e7d8;
+  border-color: rgba(154, 72, 35, 0.42);
+}
+.recipe-box {
+  background: linear-gradient(135deg, #f7e7d8, #fff5ea);
+  border: 1px solid rgba(154, 72, 35, 0.22);
+  border-radius: 24px;
+  padding: 18px;
+  display: grid;
+  gap: 14px;
+}
+.recipe-box h3 {
+  margin: 0 0 5px;
+  font-size: 22px;
+}
+.recipe-box p {
+  margin: 0;
+  color: #526174;
+}
+.form-card h2,
+.panel-card h2,
+.accepted-card h2,
+.share-card h2,
+.shop-cta-card h2,
+.coupon-card h2 {
+  margin: 0 0 12px;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+.form-card label {
+  display: block;
+  margin: 13px 0 8px;
+  font-weight: 900;
+}
+.form-card input,
+.form-card textarea,
+.form-card select {
+  width: 100%;
+  min-height: 52px;
+  border-radius: 16px;
+  border: 1px solid rgba(154, 72, 35, 0.25);
+  padding: 0 14px;
+  background: #fff;
+  font-size: 15px;
+}
+.form-card textarea {
+  min-height: 105px;
+  padding: 14px;
+  resize: vertical;
+}
+.form-card small {
+  display: block;
+  margin-top: 8px;
+  color: #667085;
+}
+.error-text,
+.error-box {
+  padding: 12px;
+  border-radius: 16px;
+  background: #fee2e2;
+  color: #991b1b;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.upload-preview {
+  width: 100%;
+  max-height: 260px;
+  object-fit: cover;
+  border-radius: 18px;
+  margin: 14px 0;
+  background: #f2e7da;
+}
+.accepted-list {
+  display: grid;
+  gap: 12px;
+}
+.accepted-player {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 12px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid rgba(154, 72, 35, 0.13);
+  border-radius: 18px;
+  padding: 10px;
+}
+.accepted-player img {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+.accepted-player strong {
+  display: block;
+}
+.accepted-player span {
+  display: block;
+  color: #9a4823;
+  font-weight: 800;
+}
+.accepted-player small {
+  display: block;
+  color: #667085;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.waiting-box {
+  margin-top: 14px;
+  border-radius: 18px;
+  background: #f7e7d8;
+  color: #963f1f;
+  padding: 13px;
+  display: grid;
+  gap: 4px;
+}
+.waiting-box.success {
+  background: #e8f7e8;
+  color: #166534;
+}
+.visible-link-box {
+  width: 100%;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14px;
+  margin: 16px 0;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px dashed rgba(154, 72, 35, 0.45);
+  word-break: break-all;
+  color: #12263a;
+  font-size: 13px;
+}
+.arena-heading {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.arena-heading h1 {
+  font-size: 32px;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  margin: 0 0 8px;
+}
+.arena-heading p {
+  max-width: 520px;
+  color: #526174;
+  line-height: 1.45;
+}
+.compact {
+  padding: 16px;
+}
+.battle-grid,
+.premium-battle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.premium-dish-card {
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fffaf3;
+  border: 1px solid rgba(154, 72, 35, 0.18);
+  box-shadow: 0 12px 28px rgba(72, 41, 20, 0.08);
+  text-align: center;
+}
+.dish-img-wrap {
+  height: 145px;
+  background: #f2e7da;
+}
+.dish-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.premium-dish-body {
+  padding: 12px 10px 14px;
+  text-align: center;
+}
+.premium-role-pill {
+  display: inline-flex;
+  padding: 5px 10px;
+  margin-bottom: 8px;
+  border-radius: 999px;
+  background: #f7e7d8;
+  color: #963f1f;
+  font-size: 10px;
+  font-weight: 900;
+}
+.premium-dish-body h2 {
+  font-size: 17px;
+  line-height: 1.1;
+  margin: 0 0 5px;
+}
+.premium-byline {
+  font-size: 11px;
+  margin: 0 0 7px;
+  color: #9a4823;
+  font-weight: 900;
+}
+.premium-story {
+  font-size: 11px;
+  line-height: 1.35;
+  color: #526174;
+  margin: 0 auto 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.premium-vote-count {
+  font-size: 15px;
+  font-weight: 900;
+  margin: 8px 0 10px;
+}
+.vote-btn {
+  width: 100%;
+  min-height: 42px;
+  border: 0;
+  border-radius: 14px;
+  padding: 8px;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, #9a4823, #6f3218);
+  box-shadow: 0 10px 20px rgba(154, 72, 35, 0.2);
+}
+.vote-btn:disabled {
+  opacity: 0.55;
+}
+.leaderboard-card {
+  overflow: hidden;
+  margin-top: 0;
+  padding: 18px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #fffaf3, #f7efe5);
+  border: 1px solid rgba(154, 72, 35, 0.18);
+  box-shadow: 0 22px 60px rgba(72, 41, 20, 0.1);
+  text-align: center;
+}
+.leaderboard-card h2 {
+  font-size: 26px;
+  margin: 0 0 8px;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+.leaderboard-card > p {
+  color: #526174;
+  line-height: 1.5;
+}
+.leaderboard-table {
+  display: grid;
+  gap: 10px;
+  margin-top: 18px;
+}
+.leaderboard-head,
+.leaderboard-row {
+  display: grid;
+  grid-template-columns: 48px 1fr 62px;
+  gap: 10px;
+  align-items: center;
+}
+.leaderboard-head {
+  min-height: 50px;
+  padding: 0 12px;
+  border-radius: 17px;
+  background: #11263b;
+  color: #fff;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.leaderboard-head span:last-child {
+  text-align: right;
+}
+.leaderboard-list {
+  display: grid;
+  gap: 10px;
+}
+.leaderboard-row {
+  min-height: 88px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  border: 1px solid rgba(154, 72, 35, 0.16);
+  text-align: left;
+}
+.leaderboard-row.winner {
+  background: linear-gradient(135deg, #fff6ea, #fffaf3);
+  border-color: rgba(154, 72, 35, 0.42);
+}
+.leaderboard-rank {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: #f7e7d8;
+  color: #963f1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+}
+.leaderboard-info strong {
+  display: block;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.leaderboard-info span,
+.leader-meta {
+  display: block;
+  color: #9a4823;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.leader-progress {
+  height: 7px;
+  margin-top: 9px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: #ead8c7;
+}
+.leader-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #9a4823, #6f3218);
+}
+.leader-votes {
+  text-align: right;
+}
+.leader-votes strong {
+  display: block;
+  font-size: 22px;
+}
+.leader-votes span {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #40546c;
+  font-weight: 800;
+}
+.leaderboard-footer {
+  margin-top: 16px;
+  padding: 13px;
+  border-radius: 16px;
+  background: #f7e7d8;
+  color: #963f1f;
+  font-size: 13px;
+  font-weight: 950;
+}
+.coupon-code {
+  border: 0;
+  border-radius: 18px;
+  padding: 14px 22px;
+  background: #fff;
+  color: #963f1f;
+  font-size: 26px;
+  font-weight: 950;
+}
+.recommend-grid {
+  grid-template-columns: 1fr;
+}
+.leaderboard-empty {
+  padding: 20px;
+  border-radius: 18px;
+  background: #fff;
+  text-align: center;
+}
+.loader-dot {
+  width: 36px;
+  height: 36px;
+  border: 4px solid #f7e7d8;
+  border-top-color: #963f1f;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 720px) {
+  .app-shell {
+    padding: 32px;
+  }
+  .steps-grid,
+  .mode-grid,
+  .theme-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .battle-grid,
+  .premium-battle-grid {
+    gap: 18px;
+  }
+  .dish-img-wrap {
+    height: 260px;
+  }
+  .premium-dish-body {
+    padding: 20px;
+  }
+  .premium-dish-body h2 {
+    font-size: 28px;
+  }
+  .premium-story {
+    font-size: 15px;
+  }
+  .vote-btn {
+    font-size: 16px;
+    min-height: 54px;
+  }
+  .leaderboard-head,
+  .leaderboard-row {
+    grid-template-columns: 54px 1fr 74px;
+  }
+  .leaderboard-card h2 {
+    font-size: 30px;
+  }
+  .recipe-box {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .recipe-btn {
+    width: auto;
+    padding: 0 20px;
+  }
+  .hero-card h1 {
+    white-space: nowrap;
+  }
+  .recommend-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 420px) {
+  .hero-card h1 {
+    font-size: 28px;
+  }
+  .center-card h1 {
+    font-size: 26px;
+  }
+  .arena-heading h1 {
+    font-size: 28px;
+  }
+  .form-card h2,
+  .panel-card h2 {
+    font-size: 24px;
+  }
+  .dish-img-wrap {
+    height: 125px;
+  }
+  .premium-dish-body h2 {
+    font-size: 15px;
+  }
+  .vote-btn {
+    font-size: 11px;
+  }
+  .leaderboard-head,
+  .leaderboard-row {
+    grid-template-columns: 42px 1fr 56px;
+  }
+  .leaderboard-rank {
+    width: 36px;
+    height: 36px;
+  }
+  .leader-votes strong {
+    font-size: 19px;
+  }
+}
+
+/* =====================================================
+   HOME PAGE FINAL POLISH
+   How it works + Recipe CTA
+===================================================== */
+
+.how-card {
+  width: 100% !important;
+  background: #fffaf3 !important;
+  border: 1.5px solid rgba(154, 72, 35, 0.24) !important;
+  border-radius: 28px !important;
+  padding: 28px !important;
+  box-shadow: 0 22px 60px rgba(72, 41, 20, 0.1) !important;
+}
+
+.how-card h2 {
+  margin: 0 0 20px !important;
+  color: #12263a !important;
+  font-size: 36px !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.04em !important;
+  text-align: left !important;
+}
+
+.home-steps-list {
+  display: grid !important;
+  gap: 12px !important;
+  width: 100% !important;
+}
+
+.home-step-row {
+  min-height: 64px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 12px 16px !important;
+  border-radius: 18px !important;
+  background: #f7e7d8 !important;
+  border: 1px solid rgba(154, 72, 35, 0.1) !important;
+  color: #12263a !important;
+}
+
+.home-step-number {
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  border-radius: 999px !important;
+  background: #9a4823 !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 16px !important;
+  font-weight: 950 !important;
+  line-height: 1 !important;
+}
+
+.home-step-text {
+  flex: 1 !important;
+  color: #12263a !important;
+  font-size: 17px !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  text-align: left !important;
+}
+
+.home-start-btn {
+  margin-top: 18px !important;
+  min-height: 60px !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, #9a4823, #6f3218) !important;
+  color: #ffffff !important;
+  box-shadow: 0 18px 38px rgba(154, 72, 35, 0.24) !important;
+}
+
+/* Recipe CTA like premium cookware card */
+.recipe-box {
+  width: 100% !important;
+  background: linear-gradient(135deg, #fff7ed 0%, #f7e7d8 100%) !important;
+  border: 1.5px solid rgba(154, 72, 35, 0.28) !important;
+  border-radius: 28px !important;
+  padding: 24px !important;
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  align-items: center !important;
+  gap: 18px !important;
+  box-shadow: 0 20px 50px rgba(72, 41, 20, 0.1) !important;
+}
+
+.recipe-copy {
+  text-align: left !important;
+}
+
+.recipe-box h3 {
+  margin: 0 0 8px !important;
+  color: #12263a !important;
+  font-size: 28px !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.035em !important;
+}
+
+.recipe-box p {
+  margin: 0 !important;
+  color: #40546c !important;
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+}
+
+.recipe-btn {
+  min-height: 60px !important;
+  padding: 0 30px !important;
+  border-radius: 20px !important;
+  background: linear-gradient(135deg, #9a4823, #6f3218) !important;
+  color: #ffffff !important;
+  font-size: 17px !important;
+  font-weight: 950 !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  box-shadow: 0 18px 38px rgba(154, 72, 35, 0.24) !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.recipe-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 22px 46px rgba(154, 72, 35, 0.3) !important;
+}
+
+/* Mobile */
+@media screen and (max-width: 640px) {
+  .how-card {
+    padding: 20px 16px !important;
+    border-radius: 24px !important;
+  }
+
+  .how-card h2 {
+    font-size: 30px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .home-steps-list {
+    gap: 10px !important;
+  }
+
+  .home-step-row {
+    min-height: 56px !important;
+    padding: 11px 13px !important;
+    border-radius: 16px !important;
+    gap: 12px !important;
+  }
+
+  .home-step-number {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+    font-size: 15px !important;
+  }
+
+  .home-step-text {
+    font-size: 15px !important;
+    line-height: 1.25 !important;
+  }
+
+  .home-start-btn {
+    min-height: 56px !important;
+    border-radius: 16px !important;
+  }
+
+  .recipe-box {
+    grid-template-columns: 1fr !important;
+    padding: 20px 16px !important;
+    border-radius: 24px !important;
+    gap: 16px !important;
+  }
+
+  .recipe-copy {
+    text-align: left !important;
+  }
+
+  .recipe-box h3 {
+    font-size: 25px !important;
+  }
+
+  .recipe-box p {
+    font-size: 14px !important;
+  }
+
+  .recipe-btn {
+    width: 100% !important;
+    min-height: 56px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Center How It Works heading + support solo/team steps */
+
+.how-card h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 18px !important;
+}
+
+.home-steps-list {
+  display: grid !important;
+  gap: 10px !important;
+}
+
+.home-step-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  min-height: 54px !important;
+  padding: 11px 13px !important;
+  border-radius: 16px !important;
+  background: #f7e7d8 !important;
+  border: 1px solid rgba(154, 72, 35, 0.12) !important;
+}
+
+.home-step-number {
+  width: 34px !important;
+  height: 34px !important;
+  min-width: 34px !important;
+  border-radius: 50% !important;
+  background: #9a4823 !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+}
+
+.home-step-text {
+  color: #12263a !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 1.25 !important;
+  text-align: left !important;
+}
+
+@media screen and (max-width: 640px) {
+  .how-card h2 {
+    font-size: 28px !important;
+    text-align: center !important;
+  }
+
+  .home-step-row {
+    min-height: 54px !important;
+    padding: 11px 13px !important;
+  }
+
+  .home-step-text {
+    font-size: 14px !important;
+  }
+}
+
+/* =====================================================
+   ACCEPT / CREATE CHALLENGE PAGE POLISH
+   Centers eyebrow badges + improves upload box/button
+===================================================== */
+
+/* Center card headings and eyebrow badges */
+.theme-card,
+.form-card,
+.mode-card,
+.center-card,
+.panel-card {
+  text-align: center !important;
+}
+
+.theme-card > .section-badge,
+.theme-card > .badge,
+.form-card > .section-badge,
+.form-card > .badge,
+.mode-card > .section-badge,
+.mode-card > .badge,
+.center-card > .section-badge,
+.center-card > .badge,
+.panel-card > .section-badge,
+.panel-card > .badge {
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  text-align: center !important;
+}
+
+/* Center section titles/subtext */
+.theme-card h2,
+.form-card h2,
+.mode-card h2,
+.panel-card h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.theme-card p,
+.form-card p,
+.mode-card p,
+.panel-card p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 560px !important;
+}
+
+/* Keep selectable option cards readable */
+.theme-option,
+.mode-option {
+  text-align: left !important;
+}
+
+/* Upload form spacing */
+.form-card {
+  padding-bottom: 22px !important;
+}
+
+.form-card label {
+  text-align: left !important;
+}
+
+/* Make file input sit nicely inside a premium box */
+.form-card input[type="file"] {
+  width: 100% !important;
+  min-height: 58px !important;
+  padding: 14px !important;
+  border-radius: 18px !important;
+  border: 1.5px solid rgba(154, 72, 35, 0.28) !important;
+  background: #ffffff !important;
+  color: #12263a !important;
+  font-size: 14px !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* File choose button inside browser input */
+.form-card input[type="file"]::file-selector-button {
+  min-height: 34px !important;
+  padding: 0 14px !important;
+  margin-right: 12px !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  background: #f7e7d8 !important;
+  color: #963f1f !important;
+  font-weight: 900 !important;
+  cursor: pointer !important;
+}
+
+/* Upload preview image */
+.upload-preview {
+  width: 100% !important;
+  max-height: 240px !important;
+  object-fit: cover !important;
+  border-radius: 18px !important;
+  margin: 14px 0 4px !important;
+  border: 1.5px solid rgba(154, 72, 35, 0.18) !important;
+}
+
+/* Add cleaner space before final submit button */
+.form-card .primary-btn,
+.form-card button[type="submit"] {
+  margin-top: 18px !important;
+  min-height: 58px !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, #9a4823, #6f3218) !important;
+  color: #ffffff !important;
+  font-weight: 950 !important;
+  box-shadow: 0 18px 38px rgba(154, 72, 35, 0.24) !important;
+}
+
+/* Smaller bottom gap after button */
+.form-card .primary-btn:last-child,
+.form-card button[type="submit"]:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* Mobile polish */
+@media screen and (max-width: 640px) {
+  .theme-card,
+  .form-card,
+  .mode-card,
+  .center-card,
+  .panel-card {
+    padding: 20px !important;
+    border-radius: 24px !important;
+  }
+
+  .theme-card > .section-badge,
+  .theme-card > .badge,
+  .form-card > .section-badge,
+  .form-card > .badge,
+  .mode-card > .section-badge,
+  .mode-card > .badge,
+  .panel-card > .section-badge,
+  .panel-card > .badge {
+    font-size: 12px !important;
+    padding: 7px 14px !important;
+  }
+
+  .theme-card h2,
+  .form-card h2,
+  .mode-card h2,
+  .panel-card h2 {
+    font-size: 25px !important;
+    line-height: 1.1 !important;
+  }
+
+  .theme-card p,
+  .form-card p,
+  .mode-card p,
+  .panel-card p {
+    font-size: 14px !important;
+    line-height: 1.45 !important;
+  }
+
+  .form-card input[type="file"] {
+    min-height: 54px !important;
+    padding: 12px !important;
+    font-size: 13px !important;
+  }
+
+  .form-card input[type="file"]::file-selector-button {
+    min-height: 32px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+  }
+
+  .upload-preview {
+    max-height: 190px !important;
+    border-radius: 16px !important;
+  }
+
+  .form-card .primary-btn,
+  .form-card button[type="submit"] {
+    margin-top: 16px !important;
+    min-height: 56px !important;
+  }
+}
+
+/* Center top eyebrow badges on accept/team challenge cards */
+
+.accepted-card,
+.share-card {
+  text-align: center !important;
+}
+
+.accepted-card > .section-badge,
+.accepted-card > .badge,
+.share-card > .section-badge,
+.share-card > .badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  text-align: center !important;
+}
+
+/* If badge is inside first child wrapper */
+.accepted-card .section-badge,
+.accepted-card .badge,
+.share-card .section-badge,
+.share-card .badge {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Keep content centered but inner accepted team row readable */
+.accepted-card h2,
+.share-card h2,
+.accepted-card p,
+.share-card p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.accepted-list,
+.accepted-player {
+  text-align: left !important;
+}
+
+/* Mobile polish */
+@media screen and (max-width: 640px) {
+  .accepted-card > .section-badge,
+  .accepted-card > .badge,
+  .share-card > .section-badge,
+  .share-card > .badge,
+  .accepted-card .section-badge,
+  .accepted-card .badge,
+  .share-card .section-badge,
+  .share-card .badge {
+    font-size: 12px !important;
+    padding: 7px 14px !important;
+  }
+}
+/* Team member fields in team challenge form */
+
+.team-members-box {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 22px;
+  background: #fff7ed;
+  border: 1.5px solid rgba(154, 72, 35, 0.22);
+}
+
+.team-members-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.team-members-head h3 {
+  margin: 0 0 4px;
+  color: #12263a;
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+.team-members-head p {
+  margin: 0;
+  color: #526174;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.team-members-head button {
+  min-height: 42px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 14px;
+  background: #9a4823;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.team-member-list {
+  display: grid;
+  gap: 14px;
+}
+
+.team-member-row {
+  padding: 14px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(154, 72, 35, 0.18);
+}
+
+.member-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.remove-member-btn {
+  width: 100%;
+  min-height: 42px;
+  margin-top: 12px;
+  border: 0;
+  border-radius: 14px;
+  background: #f7e7d8;
+  color: #963f1f;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.accepted-entry-content {
+  min-width: 0;
+}
+
+.accepted-entry-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.accepted-entry-top strong {
+  color: #12263a;
+  font-size: 16px;
+  font-weight: 950;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-count-pill {
+  flex-shrink: 0;
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #f7e7d8;
+  color: #963f1f;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.accepted-dish-name {
+  display: block;
+  margin-top: 3px;
+  color: #9a4823;
+  font-weight: 900;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.member-mini-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.member-mini-list span {
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: #fff1df;
+  color: #6f3218;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+@media screen and (max-width: 640px) {
+  .team-members-box {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .team-members-head {
+    grid-template-columns: 1fr;
+  }
+
+  .team-members-head button {
+    width: 100%;
+  }
+
+  .member-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accepted-entry-top {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .member-count-pill {
+    width: fit-content;
+  }
+}
+
+/* =====================================================
+   FINAL DESKTOP BUTTON WIDTH + CENTER BADGES/COUPON/STORE
+   Paste at very bottom of client/src/index.css
+===================================================== */
+
+/* Center coupon card content */
+.coupon-card,
+.coupon-box,
+.coupon-reveal {
+  text-align: center !important;
+}
+
+.coupon-card .section-badge,
+.coupon-card .badge,
+.coupon-box .section-badge,
+.coupon-box .badge,
+.coupon-reveal .section-badge,
+.coupon-reveal .badge {
+  display: inline-flex !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+/* Center coupon code */
+.coupon-code {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  width: fit-content !important;
+  min-width: 220px !important;
+  text-align: center !important;
+}
+
+/* Center shop/OmiChef store card */
+.shop-cta-card,
+.shop-card,
+.store-card {
+  text-align: center !important;
+}
+
+.shop-cta-card .section-badge,
+.shop-cta-card .badge,
+.shop-card .section-badge,
+.shop-card .badge,
+.store-card .section-badge,
+.store-card .badge {
+  display: inline-flex !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  align-self: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.shop-cta-card h2,
+.shop-cta-card p,
+.shop-card h2,
+.shop-card p,
+.store-card h2,
+.store-card p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Desktop button width control */
+@media screen and (min-width: 768px) {
+  .primary-btn,
+  .secondary-btn,
+  .recipe-btn,
+  .recipe-link-btn,
+  .hero-btn,
+  .home-start-btn,
+  .vote-btn,
+  button[type="submit"],
+  .share-card .primary-btn,
+  .share-card .secondary-btn,
+  .shop-cta-card .primary-btn,
+  .shop-card .primary-btn,
+  .store-card .primary-btn,
+  .form-card .primary-btn,
+  .form-card button[type="submit"] {
+    width: 58% !important;
+    max-width: 620px !important;
+    min-width: 280px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: flex !important;
+  }
+
+  /* Copy + share buttons inside share card */
+  .share-card .primary-btn,
+  .share-card .secondary-btn {
+    width: 58% !important;
+  }
+
+  /* Shop cookware button */
+  .shop-cta-card .primary-btn,
+  .shop-card .primary-btn,
+  .store-card .primary-btn {
+    width: 58% !important;
+  }
+
+  /* Form submit buttons */
+  .form-card .primary-btn,
+  .form-card button[type="submit"] {
+    width: 58% !important;
+  }
+
+  /* Vote buttons inside small dish cards should remain card-width */
+  .dish-card .vote-btn,
+  .premium-dish-card .vote-btn,
+  .dish-card button,
+  .premium-dish-card button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+  }
+}
+
+/* Mobile remains full width */
+@media screen and (max-width: 767px) {
+  .primary-btn,
+  .secondary-btn,
+  .recipe-btn,
+  .recipe-link-btn,
+  .hero-btn,
+  .home-start-btn,
+  .vote-btn,
+  button[type="submit"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+  }
+
+  .coupon-code {
+    min-width: 190px !important;
+  }
+}
+
+/* Make share card link/buttons visually balanced */
+.share-card .visible-link-box {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
+}
+
+@media screen and (min-width: 768px) {
+  .share-card .visible-link-box {
+    width: 82% !important;
+    max-width: 900px !important;
+  }
+}
+/* Center text/content inside vote team/player cards */
+
+.dish-card,
+.premium-dish-card {
+  text-align: center !important;
+}
+
+.dish-content,
+.premium-dish-body {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.dish-content h2,
+.premium-dish-body h2,
+.dish-card h2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.dish-by,
+.premium-byline,
+.dish-story,
+.premium-story,
+.vote-count,
+.premium-vote-count,
+.dish-card p,
+.premium-dish-card p {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.dish-side-label,
+.premium-role-pill {
+  align-self: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Center vote button text also */
+.dish-card .vote-btn,
+.premium-dish-card .vote-btn,
+.dish-card button,
+.premium-dish-card button {
+  text-align: center !important;
+  justify-content: center !important;
+  align-items: center !important;
+  display: flex !important;
+}
+
+/* Keep story/contact text neat */
+.dish-story,
+.premium-story {
+  max-width: 90% !important;
+  line-height: 1.45 !important;
+}
+
+/* =====================================================
+   MOBILE ONLY - SOLO / TEAM MODE CRISP CARD DESIGN
+   Paste at bottom of client/src/index.css
+===================================================== */
+
+@media screen and (max-width: 640px) {
+  .game-mode-grid,
+  .mode-grid,
+  .battle-mode-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin-top: 18px !important;
+  }
+
+  .game-mode-grid > *,
+  .mode-grid > *,
+  .battle-mode-grid > * {
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 118px !important;
+    padding: 14px 9px !important;
+    border-radius: 20px !important;
+    background: #ffffff !important;
+    border: 1.5px solid rgba(154, 72, 35, 0.22) !important;
+    box-shadow: 0 10px 24px rgba(72, 41, 20, 0.06) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: all 0.22s ease !important;
+  }
+
+  .game-mode-grid > * strong,
+  .mode-grid > * strong,
+  .battle-mode-grid > * strong {
+    display: block !important;
+    color: #12263a !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 0 8px !important;
+    font-size: 15px !important;
+    font-weight: 950 !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .game-mode-grid > * span,
+  .mode-grid > * span,
+  .battle-mode-grid > * span {
+    display: block !important;
+    max-width: 95% !important;
+    color: #526174 !important;
+    font-size: 10.8px !important;
+    line-height: 1.35 !important;
+    font-weight: 650 !important;
+    text-align: center !important;
+  }
+
+  /* Hover/tap feedback for normal card */
+  .game-mode-grid > *:hover,
+  .mode-grid > *:hover,
+  .battle-mode-grid > *:hover {
+    border-color: rgba(154, 72, 35, 0.45) !important;
+    transform: translateY(-1px) !important;
+  }
+
+  /* Selected / active card */
+  .game-mode-grid > *.selected,
+  .game-mode-grid > *.active,
+  .game-mode-grid > *[aria-pressed="true"],
+  .mode-grid > *.selected,
+  .mode-grid > *.active,
+  .mode-grid > *[aria-pressed="true"],
+  .battle-mode-grid > *.selected,
+  .battle-mode-grid > *.active,
+  .battle-mode-grid > *[aria-pressed="true"] {
+    background: linear-gradient(180deg, #fff4e8 0%, #f7e7d8 100%) !important;
+    border: 2px solid #9a4823 !important;
+    box-shadow: 0 16px 34px rgba(154, 72, 35, 0.18) !important;
+    transform: translateY(-2px) !important;
+  }
+
+  .game-mode-grid > *.selected strong,
+  .game-mode-grid > *.active strong,
+  .game-mode-grid > *[aria-pressed="true"] strong,
+  .mode-grid > *.selected strong,
+  .mode-grid > *.active strong,
+  .mode-grid > *[aria-pressed="true"] strong,
+  .battle-mode-grid > *.selected strong,
+  .battle-mode-grid > *.active strong,
+  .battle-mode-grid > *[aria-pressed="true"] strong {
+    color: #9a4823 !important;
+  }
+
+  .game-mode-grid > *.selected::before,
+  .game-mode-grid > *.active::before,
+  .game-mode-grid > *[aria-pressed="true"]::before,
+  .mode-grid > *.selected::before,
+  .mode-grid > *.active::before,
+  .mode-grid > *[aria-pressed="true"]::before,
+  .battle-mode-grid > *.selected::before,
+  .battle-mode-grid > *.active::before,
+  .battle-mode-grid > *[aria-pressed="true"]::before {
+    content: "Selected";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 24px;
+    padding: 0 10px;
+    margin-bottom: 8px;
+    border-radius: 999px;
+    background: #9a4823;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 950;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+}
+
+/* =====================================================
+   MOBILE READABILITY BOOST - SOLO / TEAM CARDS
+   Paste at bottom of client/src/index.css
+===================================================== */
+
+@media screen and (max-width: 640px) {
+  .game-mode-grid,
+  .mode-grid,
+  .battle-mode-grid {
+    gap: 10px !important;
+  }
+
+  .game-mode-grid > *,
+  .mode-grid > *,
+  .battle-mode-grid > * {
+    min-height: 132px !important;
+    padding: 15px 9px !important;
+    border-radius: 20px !important;
+  }
+
+  .game-mode-grid > * strong,
+  .mode-grid > * strong,
+  .battle-mode-grid > * strong {
+    font-size: 16px !important;
+    line-height: 1.12 !important;
+    font-weight: 950 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 9px !important;
+    color: #12263a !important;
+  }
+
+  .game-mode-grid > * span,
+  .mode-grid > * span,
+  .battle-mode-grid > * span {
+    font-size: 12.5px !important;
+    line-height: 1.38 !important;
+    font-weight: 650 !important;
+    color: #40546c !important;
+    max-width: 100% !important;
+  }
+
+  .game-mode-grid > *.selected strong,
+  .game-mode-grid > *.active strong,
+  .game-mode-grid > *[aria-pressed="true"] strong,
+  .mode-grid > *.selected strong,
+  .mode-grid > *.active strong,
+  .mode-grid > *[aria-pressed="true"] strong,
+  .battle-mode-grid > *.selected strong,
+  .battle-mode-grid > *.active strong,
+  .battle-mode-grid > *[aria-pressed="true"] strong {
+    color: #9a4823 !important;
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .game-mode-grid > *,
+  .mode-grid > *,
+  .battle-mode-grid > * {
+    min-height: 136px !important;
+    padding: 14px 7px !important;
+  }
+
+  .game-mode-grid > * strong,
+  .mode-grid > * strong,
+  .battle-mode-grid > * strong {
+    font-size: 15px !important;
+  }
+
+  .game-mode-grid > * span,
+  .mode-grid > * span,
+  .battle-mode-grid > * span {
+    font-size: 12px !important;
+    line-height: 1.35 !important;
+  }
+}
+
+/* =====================================================
+   CREATE CHALLENGE - RECIPE CTA ALIGNMENT FIX
+   Push content left + add top padding
+===================================================== */
+
+.theme-card .recipe-help-box,
+.recipe-help-box {
+  padding-top: 26px !important;
+  padding-bottom: 26px !important;
+  padding-left: 28px !important;
+  padding-right: 28px !important;
+  align-items: center !important;
+  text-align: left !important;
+}
+
+.recipe-help-box > div,
+.recipe-copy {
+  text-align: left !important;
+  align-self: center !important;
+}
+
+.recipe-help-box h3,
+.recipe-box h3 {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 8px !important;
+}
+
+.recipe-help-box p,
+.recipe-box p {
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  max-width: 620px !important;
+}
+
+/* Keep button right side on desktop */
+.recipe-help-box .recipe-link-btn,
+.recipe-box .recipe-btn {
+  justify-self: end !important;
+}
+
+/* Mobile: stacked but still left aligned */
+@media screen and (max-width: 640px) {
+  .theme-card .recipe-help-box,
+  .recipe-help-box,
+  .recipe-box {
+    grid-template-columns: 1fr !important;
+    padding: 22px 18px !important;
+    text-align: left !important;
+  }
+
+  .recipe-help-box h3,
+  .recipe-box h3 {
+    font-size: 24px !important;
+    text-align: left !important;
+  }
+
+  .recipe-help-box p,
+  .recipe-box p {
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+
+  .recipe-help-box .recipe-link-btn,
+  .recipe-box .recipe-btn {
+    width: 100% !important;
+    justify-self: stretch !important;
+    margin-top: 4px !important;
+  }
+}
+
+/* Add clean spacing between theme cards, recipe box, and next section */
+
+.theme-card {
+  display: grid !important;
+  gap: 18px !important;
+}
+
+.theme-grid {
+  margin-bottom: 4px !important;
+}
+
+.recipe-help-box,
+.recipe-box {
+  margin-top: 18px !important;
+  margin-bottom: 22px !important;
+}
+
+/* Add extra gap before the next card after theme section */
+.theme-card + .form-card,
+.theme-card + .center-card,
+.theme-card + .panel-card {
+  margin-top: 18px !important;
+}
+
+/* If recipe box is inside theme-card, keep spacing from next section */
+.recipe-help-box:last-child,
+.recipe-box:last-child {
+  margin-bottom: 8px !important;
+}
+
+/* Mobile spacing */
+@media screen and (max-width: 640px) {
+  .theme-card {
+    gap: 16px !important;
+  }
+
+  .recipe-help-box,
+  .recipe-box {
+    margin-top: 16px !important;
+    margin-bottom: 24px !important;
+  }
+
+  .theme-card + .form-card,
+  .theme-card + .center-card,
+  .theme-card + .panel-card {
+    margin-top: 20px !important;
+  }
+}
