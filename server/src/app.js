@@ -7,6 +7,7 @@ const challengeRoutes = require("./routes/challengeRoutes");
 const voteRoutes = require("./routes/voteRoutes");
 const resultRoutes = require("./routes/resultRoutes");
 const leaderboardRoutes = require("./routes/leaderboardRoutes");
+const winnerRoutes = require("./routes/winnerRoutes");
 dotenv.config();
 const app = express();
 app.use(cors(corsOptions));
@@ -23,7 +24,9 @@ app.use("/api/challenges", challengeRoutes);
 app.use("/api/votes", voteRoutes);
 app.use("/api/results", resultRoutes);
 app.use("/api/leaderboard", leaderboardRoutes);
+app.use("/api/winners", winnerRoutes);
 app.use((req, res) =>
+  
   res
     .status(404)
     .json({

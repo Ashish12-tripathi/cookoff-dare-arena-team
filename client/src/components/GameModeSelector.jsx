@@ -2,7 +2,7 @@ function GameModeSelector({ selectedMode, onSelectMode }) {
   const modes = [
     {
       id: "solo",
-      title: "Solo Cook-Off",
+      title: "Individual Cook-Off",
       desc: "Upload your dish and invite a competitor to battle.",
     },
     {
