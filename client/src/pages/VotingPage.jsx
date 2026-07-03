@@ -131,7 +131,7 @@ function VotingPage() {
                     className="winner-contact-btn"
                     href={`https://wa.me/${
                       import.meta.env.VITE_WINNER_WHATSAPP_NUMBER ||
-                      "910000000000"
+                      "919311380804"
                     }?text=${encodeURIComponent(
                       `Hi OmiChef, I am the winner of the Cook-Off Dare Arena.\n\nWinner Name: ${
                         winnerRecord.winnerName || "Winner"

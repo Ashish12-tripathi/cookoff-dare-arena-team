@@ -175,7 +175,7 @@ function PremiumLeaderboard({ challenge }) {
             <a
               className="compact-prize-btn"
               href={`https://wa.me/${
-                import.meta.env.VITE_WINNER_WHATSAPP_NUMBER || "919336357217"
+                import.meta.env.VITE_WINNER_WHATSAPP_NUMBER || "919311380804"
               }?text=${claimMessage}`}
               target="_blank"
               rel="noreferrer"
