@@ -145,7 +145,7 @@ function PremiumLeaderboard({ challenge }) {
             <div className="premium-vote-rule">
               <span>⭐</span>
               <p>
-                Winner with <strong>100+ votes</strong> can claim a premium
+                Winner with <strong>25+ votes</strong> can claim a premium
                 OmiChef special reward after verification.
               </p>
             </div>

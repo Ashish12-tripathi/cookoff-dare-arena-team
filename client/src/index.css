@@ -3783,3 +3783,9 @@ body {
   margin-left: auto !important;
   margin-right: auto !important;
 }
+
+.camera-capture-btn:disabled,
+.camera-cancel-btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}

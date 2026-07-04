@@ -150,9 +150,9 @@ function HomePage() {
             <div className="reward-info-point premium">
               <div className="reward-check">★</div>
               <div>
-                <strong>100+ votes special reward</strong>
+                <strong>25+ votes special reward</strong>
                 <p>
-                  Winner with 100+ votes can contact OmiChef for a premium
+                  Winner with 25+ votes can contact OmiChef for a premium
                   reward.
                 </p>
               </div>

@@ -589,7 +589,7 @@ const acceptChallenge = async (req, res) => {
 
       if (challenge.players.length >= challenge.maxPlayers) {
         challenge.status = "voting_open";
-        challenge.votingEndsAt = new Date(Date.now() + 1 * 60 * 1000);
+        challenge.votingEndsAt = new Date(Date.now() + 12 * 60 * 60 * 1000);
       }
     }
 

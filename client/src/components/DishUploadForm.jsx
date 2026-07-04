@@ -38,6 +38,8 @@ function DishUploadForm({ title, buttonText, onSubmit, mode = "solo" }) {
   const [cameraOpen, setCameraOpen] = useState(false);
   const [cameraError, setCameraError] = useState("");
   const [cameraLoading, setCameraLoading] = useState(false);
+  const [cameraReady, setCameraReady] = useState(false);
+  const [capturingPhoto, setCapturingPhoto] = useState(false);
 
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
@@ -104,6 +106,8 @@ function DishUploadForm({ title, buttonText, onSubmit, mode = "solo" }) {
     if (videoRef.current) {
       videoRef.current.srcObject = null;
     }
+
+    setCameraReady(false);
   };
 
   const openCamera = async () => {
@@ -111,6 +115,7 @@ function DishUploadForm({ title, buttonText, onSubmit, mode = "solo" }) {
       setError("");
       setCameraError("");
       setCameraLoading(true);
+      setCameraReady(false);
 
       const isLocalhost =
         window.location.hostname === "localhost" ||
@@ -154,6 +159,7 @@ function DishUploadForm({ title, buttonText, onSubmit, mode = "solo" }) {
         }
       }, 100);
     } catch (err) {
+      stopCamera();
       setCameraOpen(false);
       setCameraError("");
       setError(
@@ -169,21 +175,38 @@ function DishUploadForm({ title, buttonText, onSubmit, mode = "solo" }) {
     setCameraOpen(false);
     setCameraError("");
     setCameraLoading(false);
+    setCapturingPhoto(false);
   };
 
   const capturePhoto = async () => {
     try {
+      setCameraError("");
+      setCapturingPhoto(true);
+
       if (!videoRef.current) {
-        throw new Error("Camera is not ready.");
+        throw new Error("Camera is not ready yet.");
       }
 
       const video = videoRef.current;
+
+      if (!video.videoWidth || !video.videoHeight) {
+        throw new Error("Camera is still loading. Please wait one second.");
+      }
+
       const canvas = document.createElement("canvas");
 
-      canvas.width = video.videoWidth || 1280;
-      canvas.height = video.videoHeight || 720;
+      const maxWidth = 1280;
+      const scale = Math.min(1, maxWidth / video.videoWidth);
+
+      canvas.width = Math.round(video.videoWidth * scale);
+      canvas.height = Math.round(video.videoHeight * scale);
 
       const context = canvas.getContext("2d");
+
+      if (!context) {
+        throw new Error("Could not prepare photo capture.");
+      }
+
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
       const blob = await new Promise((resolve) => {
@@ -202,7 +225,11 @@ function DishUploadForm({ title, buttonText, onSubmit, mode = "solo" }) {
       closeCamera();
       await uploadSelectedFile(capturedFile);
     } catch (err) {
-      setCameraError(err.message || "Could not capture photo.");
+      setCameraError(
+        err.message || "Could not capture photo. Please wait and try again."
+      );
+    } finally {
+      setCapturingPhoto(false);
     }
   };
 
@@ -569,16 +596,34 @@ function DishUploadForm({ title, buttonText, onSubmit, mode = "solo" }) {
                 playsInline
                 muted
                 autoPlay
+                onLoadedMetadata={() => setCameraReady(true)}
+                onCanPlay={() => setCameraReady(true)}
               />
             </div>
 
             <div className="camera-modal-actions">
-              <button type="button" onClick={closeCamera} className="camera-cancel-btn">
+              <button
+                type="button"
+                onClick={closeCamera}
+                className="camera-cancel-btn"
+                disabled={capturingPhoto}
+              >
                 Cancel
               </button>
 
-              <button type="button" onClick={capturePhoto} className="camera-capture-btn">
-                Capture Photo
+              <button
+                type="button"
+                onClick={capturePhoto}
+                className="camera-capture-btn"
+                disabled={cameraLoading || capturingPhoto || !cameraReady}
+              >
+                {cameraLoading
+                  ? "Opening Camera..."
+                  : capturingPhoto
+                    ? "Capturing..."
+                    : !cameraReady
+                      ? "Camera Loading..."
+                      : "Capture Photo"}
               </button>
             </div>
           </div>
